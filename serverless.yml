@@ -1,0 +1,18 @@
+service: aws-bedrock-llm-api
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: python3.9
+  apiGateway:
+    apiKeys:
+      - apiKey
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - http:
+          path: /
+          private: true
+          method: get
