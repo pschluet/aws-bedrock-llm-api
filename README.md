@@ -2,6 +2,9 @@
 Setup of an LLM API utilizing AWS Bedrock for predictions
 
 ## Setup & Deploy
+1. Rename `.env.example` to `.env`, and replace the variable values with your own values.
+1. Run the following commands
+
 ```
 npm install -g serverless
 npm install

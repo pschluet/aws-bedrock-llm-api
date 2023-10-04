@@ -1,12 +1,15 @@
 service: aws-bedrock-llm-api
 frameworkVersion: '3'
 
+useDotenv: true
+
 provider:
   name: aws
   runtime: python3.10
   apiGateway:
     apiKeys:
-      - apiKey
+      - name: apiKey
+        value: ${env:API_KEY}
   iam:
     role:
       statements:
