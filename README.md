@@ -10,6 +10,8 @@ serverless deploy
 ```
 
 ## Example API Call
+Once you run `serverless deploy`, the domain and API key values that you will use in the request below will be printed to the console.
+
 Request
 ```
 curl --request POST \
