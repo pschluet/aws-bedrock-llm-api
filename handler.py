@@ -9,7 +9,8 @@ def query(event, context):
             "statusCode": 200, 
             "body": json.dumps({
                 "prompt": prompt
-            })}
+            })
+        }
     except:
         return  {
             "statusCode": 400,
