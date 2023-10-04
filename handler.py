@@ -15,8 +15,6 @@ def query_llm(prompt: str) -> str:
 
     response = bedrock.invoke_model(body=request_body, modelId=modelId, accept=app_json, contentType=app_json)
 
-    # print(f'Prompt: {prompt}, LLM Response: {json.dumps(response)}')
-
     response_body = json.loads(response.get('body').read())
     return response_body.get('generations')[0].get('text')
 
