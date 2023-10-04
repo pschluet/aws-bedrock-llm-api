@@ -3,10 +3,18 @@ frameworkVersion: '3'
 
 provider:
   name: aws
-  runtime: python3.9
+  runtime: python3.10
   apiGateway:
     apiKeys:
       - apiKey
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - 'bedrock:InvokeModel'
+          Resource:
+            - 'arn:aws:bedrock:*::foundation-model/*'
 
 functions:
   query:
@@ -16,3 +24,15 @@ functions:
           path: /query
           private: true
           method: post
+
+plugins:
+  - serverless-python-requirements
+
+custom:
+  pythonRequirements:
+    dockerizePip: true
+    slim: true
+    slimPatternsAppendDefaults: true
+    slimPatterns:
+      - 'venv/*'
+      - 'node_modules/*'
