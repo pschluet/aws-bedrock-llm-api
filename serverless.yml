@@ -9,10 +9,10 @@ provider:
       - apiKey
 
 functions:
-  hello:
-    handler: handler.hello
+  query:
+    handler: handler.query
     events:
       - http:
-          path: /
+          path: /query
           private: true
-          method: get
+          method: post

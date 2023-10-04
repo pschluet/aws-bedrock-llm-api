@@ -1,12 +1,19 @@
 import json
 
 
-def hello(event, context):
-    body = {
-        "message": "Go Serverless v3.0! Your function executed successfully!",
-        "input": event,
-    }
+def query(event, context):
+    try:
+        prompt = json.loads(event['body'])['prompt']
 
-    response = {"statusCode": 200, "body": json.dumps(body)}
-
-    return response
+        return {
+            "statusCode": 200, 
+            "body": json.dumps({
+                "prompt": prompt
+            })}
+    except:
+        return  {
+            "statusCode": 400,
+            "body": json.dumps({
+                "error": "Bad Request: must include 'prompt' in request body."
+            })
+        }
