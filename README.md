@@ -30,7 +30,6 @@ curl --request POST \
 Response
 ```
 {
-	"prompt": "What's the fastest marathon time?",
 	"result": " The fastest marathon time is 2 hours, 2 minutes, and 57 seconds, set by Eliud Kipchoge of Kenya at the Berlin Marathon in 2018.\n\nThe women's fastest marathon time is 2 hours, 15 minutes, and 25 seconds, set by Brigid Kosgei of Kenya at the Chicago Marathon in 2019."
 }
 ```
