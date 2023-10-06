@@ -5,7 +5,7 @@ bedrock = boto3.client(service_name="bedrock-runtime")
 
 
 def query_llm(prompt: str) -> str:
-    request_body = json.dumps({"prompt": prompt, "max_tokens": 1000, "temperature": 0.9})
+    request_body = json.dumps({"prompt": prompt, "max_tokens": 500, "temperature": 0.9})
 
     modelId = "cohere.command-text-v14"
     app_json = "application/json"
